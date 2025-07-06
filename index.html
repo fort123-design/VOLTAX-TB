@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TB VOLTAX AI</title>
+    <style>
+        body {
+            font-family:Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+            transition: background-color
+        o.3s, color o.3s;
+        }
+        scroll-behaviour smooth
+         .toolbar {
+            position: fixed; top: 0; left:
+    0; width: 100%;
+     background: #ffffffee;
+    box-shadow: 0 2px 6px
+rgba(0,0,0,0.1);
+    z-index: 1000; display: flex;
+align-items: center;
+padding: 12px 24px;
+justify-content: space-between;
+         }
+        .toolbar-logo {
+            font-size: 20px;
+            font-weight: bold;
+            color: #4285f4;
+        }
+        .toolbar-links a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+    .toolbar-link a:hover {
+        color: #4285f4;
+    }
+         .dark-mode {
+            background-color: #121212;
+            color: #f0f0f0;
+         }
+          nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #f8f8f8;
+            border-bottom: 1px solid #ccc;
+            padding: 10px 0;
+            text-align: center;
+            z-index: 1000;
+          }
+           nav a {
+            margin: 0 20px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+           }
+            nav a:hover {
+                text-decoration: underline;
+            }
+          .section {
+            padding: 80px 20px;
+            text-align: center;
+          }
+           .logo {
+            font-size: 64px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            cursor: default;
+           }
+           .logo span:hover {
+            transform: scale(1.2);
+           }
+            input[type="text"] {
+                width: 90%;
+                max-width: 500px;
+                height: 40px;
+                font-size: 18px;
+                padding: 5px 15px;
+                border-radius: 24px;
+                border: 1px solid #ccc;
+                outline: none;
+            }
+             button {
+                margin-top: 10px;
+                padding: 10px 20px;
+                font-size: 16px;
+                border-radius: 5px;
+                border: 1px solid #ccc;
+                cursor: pointer;
+             }
+              .dark-toggle, .voice-btn {
+                position: fixed;
+                top: 15px;
+              }
+              .dark-toggle {right: 20px}
+              .voice-btn {left: 20px;}
+
+        /*chat box*/
+        #chatbox {
+            position: fixed;
+            bottom: 0;
+            right: 10px;
+            width: 300px;
+            height: 400px;
+            background: #f1f1f1;
+            border: 1px solid #ccc;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 10px;
+            font-size: 14px;
+            z-index: 999;
+        }
+         .chat-message {
+            flex: 1;
+            overflow-y: auto;
+        margin-bottom: 10px;
+         }
+          .chat-meassage div {
+            margin-bottom: 8px;
+          }
+           .chat-input {
+            display: flex;
+            gap: 5px;
+           }
+            .chat-input input {
+                flex: 1;
+                padding: 6px;
+                font-size: 14px;
+            }
+             @media (max-width: 600px) {
+     .logo {font-size: 48px; }
+     #chatBox {width: 90%; right: 5%;}
+             }
+             .scroll-text {
+            background-color: #4285f8;
+            color: #fff;
+            padding: 8px 0;
+            font-size: 16px;
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+          }
+           .scroll-text::before {
+             content: attr(data-text);
+             display: inline-block;
+             animation: scroll 15s linear
+             infinite;
+           }
+            @keyframes scroll {
+                0% {transform: translateX(100%);}
+                100% {transform:
+                translateX(-100%);}
+            }
+            #signupForm input {
+                width: 100px;
+                max-width: 400px;
+                padding: 10px;
+                margin: 5px auto;
+                border: 1px solid #ccc;
+                border-radius: 6px;
+                display: block;
+            }
+             #signupForm button {
+                margin-top: 10px;
+             }
+           #waCustom {
+            text-align: center;
+            margin: 40px auto;
+           }
+        #waCustom input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            width: 260px;
+            margin-right: 10px;
+        }
+         #wacustom label{
+            margin: 0 10px;
+            font-size: 16px;
+         }
+        #waCustom button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background: #25D366;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    #waCustom button:hover {
+        background: #1ebe5d;
+    }
+    .container {
+      max-width: 800px;
+      margin: 60px auto;
+      background-color: #fff;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+      text-align: center;
+      text-decoration: underline;
+      color: #2c3e50;
+      margin-bottom: 30px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.8;
+      color: #555;
+      text-align: justify;
+    }
+
+    .highlight {
+      color: #2980b9;
+      font-weight: bold;
+    }
+    
+    </style>
+</head>
+<body>
+
+    <!--Navigation Bar-->
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#About us">Contact</a>
+    </nav>
+
+    <!--Scrolling Marquee-->
+    <marquee behaviour="scroll"
+    direction="left" scrollamount="5"
+    style="background: #4285f4;
+    color: white; padding: 8px;
+    font-weight: bold;">
+    Welcome to TB VOLTAX A - now with voice search, AI chat, and smart
+    navigation! Type, speak, or ask anything
+    </marquee>
+    <!--Top Buttons-->
+    <div class="dark-toggle">
+      <button
+      onclick="toggleDarkMode()">Dark-Mode</button>
+    </div>
+    <h1>Voice Search</h1>
+    <input type="text" id="searchInput" placeholder="Say something..." />
+    <button id="micBtn">🎤</button>
+    <div class="status" id="status">Click the mic and start speaking</div>
+    <!--Home Section-->
+    <div class="section" id="home">
+        <div class="logo">
+            <span style="color :#4285f4">T</span>
+            <span style="color :#ea4335">B</span>
+            <span style="color :#fbbc05">V</span>
+            <span style="color :#4285f4">O</span>
+            <span style="color :#34a853">T</span>
+
+            <span style="color :#ea4335">AX</span>
+        </div>
+        <form
+        action="https://www.google.com/search" method="GET">
+         <input type="text"
+         id="searchInput" name="q"
+         placeholder="Search..." />
+         <br>
+         <button type="submit">Search</button>
+    </form>
+    </div>
+    <!--Floating Email Icon-->
+    <a href="#create" id="emailIcon"
+    title="Create Email Account">
+<svg
+xmlns="http://www.w3.org/2000/svg"
+fill="white" viewBox="0 0 24 24"
+width="24" height="24"></svg>
+    <path data-="M2 4a2 2 0 012-2h16a2 2
+    0 012 2v21-10 6L2 6V4zm0 4.419.4
+    5.6a1 1 0 001.2 0L22 8.4V20a2 2 0
+    01-2 2H4a2 2 0 01-2-2V8.4z"/>
+</a>
+<section id="About us"
+class="container">
+   <h2><u>About web</u></h2>
+   <p><strong>This is a very New GOOD and Magnificiant WEB </strong></p>
+    <p><strong>just A look A like of GOOGLE. An Awesome web!!!</strong></p>
+    <p><strong>Please Ensure You Use This web Appropriately</strong></p>
+</section>
+    <!--TOP TOOLBAR-->
+    <header class="toolbar">
+        <div
+        class="toolbar-logo">TB VOLTAX</div>
+        <nav class="toolbar-links">
+            <a href="#home">Home</a>
+        </nav>
+    </header>
+     <script src="script.js"></script>
+</body>
+</html>
